@@ -1,4 +1,4 @@
-class Normal {
+public class Normal {
   double x_pos;
   double y_pos;
   double speed;

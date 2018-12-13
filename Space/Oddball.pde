@@ -3,11 +3,10 @@ class Oddball extends Normal{
   double y_pos;
   double speed;
   double angle;
-  int colour; 
-  
-  }
+  int colour;
   
   Oddball(int x, int y, int speed, int angle){
+    super(x, y, speed, angle);
     x_pos = x;
     y_pos = y;
     this.speed = speed;
@@ -15,14 +14,14 @@ class Oddball extends Normal{
   }
   
   void move(){
-    x_pos = Math.cos(angle) * (speed/2) + x_pos;
-    y_pos = Math.sin(angle) * (speed/2) + y_pos;
+    x_pos = Math.cos(angle) * speed + x_pos;
+    y_pos = Math.sin(angle) * speed + y_pos;
   }
   
   void show(){ 
     pushMatrix();
     translate((float)x_pos, (float)y_pos);
-    ellipse(0,0,10,10);
+    rect(0,0,10,10);
     fill(colour);
     popMatrix();
     
